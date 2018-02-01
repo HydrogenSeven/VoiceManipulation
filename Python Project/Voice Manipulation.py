@@ -1,51 +1,11 @@
 from pydub import AudioSegment
 
-
-AA =
-AE = AudioSegment.from_wav("AE.wav")
-AH = AudioSegment.from_wav("AH.wav")
-AO = AudioSegment.from_wav("AO.wav")
-AW = AudioSegment.from_wav("AW.wav")
-AY = AudioSegment.from_wav("AY.wav")
-B = AudioSegment.from_wav("AB.wav")
-CH = AudioSegment.from_wav("CH.wav")
-D = AudioSegment.from_wav("D.wav")
-DH = AudioSegment.from_wav("DH.wav")
-EH = AudioSegment.from_wav("EH.wav")
-ER = AudioSegment.from_wav("ER.wav")
-EY = AudioSegment.from_wav("EY.wav")
-F = AudioSegment.from_wav("F.wav")
-G = AudioSegment.from_wav("G.wav")
-HH = AudioSegment.from_wav("HH.wav")
-IH = AudioSegment.from_wav("IH.wav")
-IY = AudioSegment.from_wav("IY.wav")
-JH = AudioSegment.from_wav("JH.wav")
-K = AudioSegment.from_wav("K.wav")
-L = AudioSegment.from_wav("L.wav")
-M = AudioSegment.from_wav("M.wav")
-N = AudioSegment.from_wav("N.wav")
-NG = AudioSegment.from_wav("NG.wav")
-OW = AudioSegment.from_wav("OW.wav")
-OY = AudioSegment.from_wav("OY.wav")
-P = AudioSegment.from_wav("P.wav")
-R = AudioSegment.from_wav("R.wav")
-S = AudioSegment.from_wav("S.wav")
-SH = AudioSegment.from_wav("SH.wav")
-T = AudioSegment.from_wav("T.wav")
-TH = AudioSegment.from_wav("TH.wav")
-UH = AudioSegment.from_wav("UH.wav")
-UW = AudioSegment.from_wav("UW.wav")
-V = AudioSegment.from_wav("V.wav")
-W = AudioSegment.from_wav("W.wav")
-Y = AudioSegment.from_wav("Y.wav")
-Z = AudioSegment.from_wav("Z.wav")
-ZH = AudioSegment.from_wav("ZH.wav")
-FinalSegment = AudioSegment.from_wav("silence.wav")
+FinalSegment = AudioSegment.from_wav("pause.wav")
 
 CMUData = []
 sentence = input('Type some text: ')
 currword = ""
-vowel=""
+vowel = ""
 lastindex = 0
 parsed = []
 
@@ -57,56 +17,93 @@ for i in range(sentence.length):
 src = open("cmudict.dict")
 for word in parsed:
     for line in src:
-        if parsed in line:
+        if word in line:
             CMUData.append(line)
 src.close()
 
 for word in CMUData:
-    for i in range(word.length, CMUData.length):
+    i = word.length
+    while i in range(word.length, CMUData.length):
         if CMUData[i:i + 1] == " ":
             if CMUData[lastindex:i] == "AA":
-                FinalSegment = FinalSegment+ AudioSegment.from_wav("AA.wav")
-            elif CMUData[lastindex:i] == "AA":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("AA.wav")
+            elif CMUData[lastindex:i] == "AE":
                 FinalSegment = FinalSegment+ AudioSegment.from_wav("AE.wav")
-            elif CMUData[lastindex:i] == "AA":
-                FinalSegment = FinalSegment + AudioSegment.from_wav("AE.wav")
-            elif CMUData[lastindex:i] == "AA":
+            elif CMUData[lastindex:i] == "AH":
                 FinalSegment = FinalSegment + AudioSegment.from_wav("AH.wav")
-            elif CMUData[lastindex:i] == "AA":
+            elif CMUData[lastindex:i] == "AO":
                 FinalSegment = FinalSegment + AudioSegment.from_wav("AO.wav")
-                AW = AudioSegment.from_wav("AW.wav")
-                AY = AudioSegment.from_wav("AY.wav")
-                B = AudioSegment.from_wav("AB.wav")
-                CH = AudioSegment.from_wav("CH.wav")
-                D = AudioSegment.from_wav("D.wav")
-                DH = AudioSegment.from_wav("DH.wav")
-                EH = AudioSegment.from_wav("EH.wav")
-                ER = AudioSegment.from_wav("ER.wav")
-                EY = AudioSegment.from_wav("EY.wav")
-                F = AudioSegment.from_wav("F.wav")
-                G = AudioSegment.from_wav("G.wav")
-                HH = AudioSegment.from_wav("HH.wav")
-                IH = AudioSegment.from_wav("IH.wav")
-                IY = AudioSegment.from_wav("IY.wav")
-                JH = AudioSegment.from_wav("JH.wav")
-                K = AudioSegment.from_wav("K.wav")
-                L = AudioSegment.from_wav("L.wav")
-                M = AudioSegment.from_wav("M.wav")
-                N = AudioSegment.from_wav("N.wav")
-                NG = AudioSegment.from_wav("NG.wav")
-                OW = AudioSegment.from_wav("OW.wav")
-                OY = AudioSegment.from_wav("OY.wav")
-                P = AudioSegment.from_wav("P.wav")
-                R = AudioSegment.from_wav("R.wav")
-                S = AudioSegment.from_wav("S.wav")
-                SH = AudioSegment.from_wav("SH.wav")
-                T = AudioSegment.from_wav("T.wav")
-                TH = AudioSegment.from_wav("TH.wav")
-                UH = AudioSegment.from_wav("UH.wav")
-                UW = AudioSegment.from_wav("UW.wav")
-                V = AudioSegment.from_wav("V.wav")
-                W = AudioSegment.from_wav("W.wav")
-                Y = AudioSegment.from_wav("Y.wav")
-                Z = AudioSegment.from_wav("Z.wav")
-                ZH = AudioSegment.from_wav("ZH.wav")
+            elif CMUData[lastindex:i] == "AW":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("AW.wav")
+            elif CMUData[lastindex:i] == "AY":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("AY.wav")
+            elif CMUData[lastindex:i] == "AB":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("AB.wav")
+            elif CMUData[lastindex:i] == "CH":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("CH.wav")
+            elif CMUData[lastindex:i] == "D":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("D.wav")
+            elif CMUData[lastindex:i] == "DH":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("DH.wav")
+            elif CMUData[lastindex:i] == "EH":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("EH.wav")
+            elif CMUData[lastindex:i] == "ER":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("ER.wav")
+            elif CMUData[lastindex:i] == "EY":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("EY.wav")
+            elif CMUData[lastindex:i] == "F":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("F.wav")
+            elif CMUData[lastindex:i] == "G":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("G.wav")
+            elif CMUData[lastindex:i] == "HH":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("HH.wav")
+            elif CMUData[lastindex:i] == "IH":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("IH.wav")
+            elif CMUData[lastindex:i] == "IY":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("IY.wav")
+            elif CMUData[lastindex:i] == "JH":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("JH.wav")
+            elif CMUData[lastindex:i] == "K":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("K.wav")
+            elif CMUData[lastindex:i] == "L":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("L.wav")
+            elif CMUData[lastindex:i] == "M":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("M.wav")
+            elif CMUData[lastindex:i] == "N":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("N.wav")
+            elif CMUData[lastindex:i] == "NG":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("NG.wav")
+            elif CMUData[lastindex:i] == "OW":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("OW.wav")
+            elif CMUData[lastindex:i] == "OY":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("OY.wav")
+            elif CMUData[lastindex:i] == "P":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("P.wav")
+            elif CMUData[lastindex:i] == "R":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("R.wav")
+            elif CMUData[lastindex:i] == "S":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("S.wav")
+            elif CMUData[lastindex:i] == "SH":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("SH.wav")
+            elif CMUData[lastindex:i] == "T":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("T.wav")
+            elif CMUData[lastindex:i] == "TH":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("TH.wav")
+            elif CMUData[lastindex:i] == "UH":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("UH.wav")
+            elif CMUData[lastindex:i] == "UW":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("UW.wav")
+            elif CMUData[lastindex:i] == "V":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("V.wav")
+            elif CMUData[lastindex:i] == "W":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("W.wav")
+            elif CMUData[lastindex:i] == "Y":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("Y.wav")
+            elif CMUData[lastindex:i] == "Z":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("Z.wav")
+            elif CMUData[lastindex:i] == "ZH":
+                FinalSegment = FinalSegment + AudioSegment.from_wav("ZH.wav")
+            else:
+                break
             lastindex = i + 1
+            i += 1
